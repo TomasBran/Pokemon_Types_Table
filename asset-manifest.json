@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Pokemon_Types_Table/static/css/main.33f9d273.css",
+    "main.js": "/Pokemon_Types_Table/static/js/main.3bdeed65.js",
+    "static/js/787.ab378faf.chunk.js": "/Pokemon_Types_Table/static/js/787.ab378faf.chunk.js",
+    "static/media/background.jpg": "/Pokemon_Types_Table/static/media/background.01b8d36634d61dedbd28.jpg",
+    "index.html": "/Pokemon_Types_Table/index.html",
+    "main.33f9d273.css.map": "/Pokemon_Types_Table/static/css/main.33f9d273.css.map",
+    "main.3bdeed65.js.map": "/Pokemon_Types_Table/static/js/main.3bdeed65.js.map",
+    "787.ab378faf.chunk.js.map": "/Pokemon_Types_Table/static/js/787.ab378faf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33f9d273.css",
+    "static/js/main.3bdeed65.js"
+  ]
+}
