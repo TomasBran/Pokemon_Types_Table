@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import TypeButtons from './components/TypeButtons/TypeButtons';
+import { SelectionProvider } from './context/SelectionContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <SelectionProvider>
+      
+
+        <div>
+          <h2 style={{color:"gray", backgroundColor:"white"}}>Tipos del pokemon enemigo:</h2>
+          <div className="type-container">
+
+            <TypeButtons/>
+
+          </div>
+        </div>
+
+
+      </SelectionProvider>
+
     </div>
   );
 }

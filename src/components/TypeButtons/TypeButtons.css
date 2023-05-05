@@ -1,0 +1,164 @@
+.normal{
+    background-color: #A8A77A;
+}
+
+.fire{
+    background-color: #EE8130;
+}
+
+.water{
+    background-color: #6390F0;
+}
+
+.electric {
+    background-color: #F7D02C;
+}
+
+.grass{
+    background-color: #7AC74C;
+}
+
+.ice{
+    background-color: #96D9D6;
+}
+
+.fighting{
+    background-color: #C22E28;
+}
+
+.poison{
+    background-color: #A33EA1;
+}
+
+.ground{
+    background-color: #E2BF65;
+}
+
+.flying{
+    background-color: #A98FF3;
+}
+
+.psychic{
+    background-color: #F95587;
+}
+
+.bug{
+    background-color: #A6B91A;
+}
+
+.rock{
+    background-color: #B6A136;
+}
+
+.ghost{
+    background-color: #735797;
+}
+
+.dragon{
+    background-color: #6F35FC;
+}
+
+.dark{
+    background-color: #705746;
+}
+
+.steel{
+    background-color: #B7B7CE;
+}
+
+.fairy{
+    background-color: #D685AD;
+}
+
+.button, .types{
+    padding: 4px 12px;
+    color:white;
+    font-weight: 600;
+    border-radius: 10px;
+    border-color: white;
+    max-height: 24px;
+}
+
+.button::first-letter, .typesContainer p::first-letter{
+    text-transform: capitalize;
+}
+
+
+.button:hover{
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgba(236, 236, 236, 0.527);
+    padding: 30px;
+    border-radius: 10px;
+
+}
+
+.button-container:hover{
+    background-color: rgba(236, 236, 236, 0.719);
+}
+
+.flexContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.typesContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 20vw;
+    gap: 10px;
+}
+
+.empty{
+    display: none;
+}
+
+.mainTypeContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.mainTypeContainer *:hover {
+    cursor: default;
+}
+
+.selectedContainer{
+    background-color: rgba(255, 255, 255, 0.815);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.selectedContainer * {
+    margin: 10px;
+}
+
+.EffectiveContainer, .NeutralContainer, .UneffectiveContainer, .ImmuneContainer{
+    background-color: rgba(233, 231, 231, 0.712);
+    min-height: 45vh;
+    border-radius: 10px;
+    box-shadow: -3px 5px 10px black;
+}
+
+.EffectiveContainer:hover, .NeutralContainer:hover, .UneffectiveContainer:hover, .ImmuneContainer:hover{
+    background-color: rgb(233, 231, 231);
+    transform: scale(1.1);
+    transition: all 0.7s;
+    box-shadow: -15px 15px 10px black;
+}
+
+.selectedType:hover{
+    background-color: #c40c0c;
+    cursor:not-allowed;
+}
