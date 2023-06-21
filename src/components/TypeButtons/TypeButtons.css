@@ -1,73 +1,94 @@
+:root {
+    --normal-color: #A8A77A;
+    --fire-color: #EE8130;
+    --water-color: #6390F0;
+    --electric-color: #F7D02C;
+    --grass-color: #7AC74C;
+    --ice-color: #96D9D6;
+    --fighting-color: #C22E28;
+    --poison-color: #A33EA1;
+    --ground-color: #E2BF65;
+    --flying-color: #A98FF3;
+    --psychic-color: #F95587;
+    --bug-color: #A6B91A;
+    --rock-color: #B6A136;
+    --ghost-color: #735797;
+    --dragon-color: #6F35FC;
+    --dark-color: #705746;
+    --steel-color: #B7B7CE;
+    --fairy-color: #D685AD;
+}
+
 .normal{
-    background-color: #A8A77A;
+    background-color: var(--normal-color);
 }
 
 .fire{
-    background-color: #EE8130;
+    background-color: var(--fire-color);
 }
 
 .water{
-    background-color: #6390F0;
+    background-color: var(--water-color);
 }
 
 .electric {
-    background-color: #F7D02C;
+    background-color: var(--electric-color);
 }
 
 .grass{
-    background-color: #7AC74C;
+    background-color: var(--grass-color);
 }
 
 .ice{
-    background-color: #96D9D6;
+    background-color: var(--ice-color);
 }
 
 .fighting{
-    background-color: #C22E28;
+    background-color: var(--fighting-color);
 }
 
 .poison{
-    background-color: #A33EA1;
+    background-color: var(--poison-color);
 }
 
 .ground{
-    background-color: #E2BF65;
+    background-color: var(--ground-color);
 }
 
 .flying{
-    background-color: #A98FF3;
+    background-color: var(--flying-color);
 }
 
 .psychic{
-    background-color: #F95587;
+    background-color: var(--psychic-color);
 }
 
 .bug{
-    background-color: #A6B91A;
+    background-color: var(--bug-color);
 }
 
 .rock{
-    background-color: #B6A136;
+    background-color: var(--rock-color);
 }
 
 .ghost{
-    background-color: #735797;
+    background-color: var(--ghost-color);
 }
 
 .dragon{
-    background-color: #6F35FC;
+    background-color: var(--dragon-color);
 }
 
 .dark{
-    background-color: #705746;
+    background-color: var(--dark-color);
 }
 
 .steel{
-    background-color: #B7B7CE;
+    background-color: var(--steel-color);
 }
 
 .fairy{
-    background-color: #D685AD;
+    background-color: var(--fairy-color);
 }
 
 .button, .types{
@@ -149,16 +170,40 @@
     min-height: 45vh;
     border-radius: 10px;
     box-shadow: -3px 5px 10px black;
+    transition: all 0.2s ease;
 }
 
 .EffectiveContainer:hover, .NeutralContainer:hover, .UneffectiveContainer:hover, .ImmuneContainer:hover{
     background-color: rgb(233, 231, 231);
     transform: scale(1.1);
-    transition: all 0.7s;
     box-shadow: -15px 15px 10px black;
 }
 
 .selectedType:hover{
     background-color: #c40c0c;
     cursor:not-allowed;
+}
+
+.mainTitle{
+    background-color: rgba(31, 26, 26, 0.622);
+    border-radius: 40px;
+    color:white;
+    min-width: 25vw;
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selectorContainer{
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }

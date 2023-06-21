@@ -9,8 +9,8 @@ function App() {
       <SelectionProvider>
       
 
-        <div>
-          <h2 style={{color:"gray", backgroundColor:"white"}}>Tipos del pokemon enemigo:</h2>
+        <div className='mainContainer'>
+          <h2 className='mainTitle'>Tipos del pokemon enemigo:</h2>
           <div className="type-container">
 
             <TypeButtons/>

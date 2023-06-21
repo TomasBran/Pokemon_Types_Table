@@ -13,6 +13,16 @@ export const SelectionProvider = ({children}) => {
         currentFirstSelection==="" ? setCurrentFirstSelection(type) : setCurrentSecondSelection(type)
     }
 
+    const setBothTypes = (type1, type2) => {
+        setCurrentFirstSelection(type1)
+        setCurrentSecondSelection(type2)
+    }
+
+    const deleteBothTypes = () => {
+        deleteSelection(1)
+        deleteSelection(2)
+    }
+
     const setEnemySelection = (type) => {
         currentEnemyFirstSelection==="" ? setCurrentEnemyFirstSelection(type) : setCurrentEnemySecondSelection(type)
     }
@@ -26,7 +36,7 @@ export const SelectionProvider = ({children}) => {
     }
 
     return(
-        <SelectionContext.Provider value={{currentFirstSelection, currentSecondSelection, currentEnemyFirstSelection, currentEnemySecondSelection, setSelection, setEnemySelection, deleteSelection, deleteEnemySelection}}>
+        <SelectionContext.Provider value={{currentFirstSelection, currentSecondSelection, currentEnemyFirstSelection, currentEnemySecondSelection, setSelection, setEnemySelection, deleteSelection, deleteEnemySelection, setBothTypes, deleteBothTypes}}>
             {children}
         </SelectionContext.Provider>
     )

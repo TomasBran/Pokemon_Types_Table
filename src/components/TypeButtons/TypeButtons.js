@@ -188,6 +188,8 @@ const pokemonTypes = [
 
 const TypeButtons = () => {
 
+    const [input, setInput] = useState('')
+
     const [ types_x4,   setTypes_x4  ] = useState([])
     const [ types_x2,   setTypes_x2  ] = useState([])
     const [ types_x1,   setTypes_x1  ] = useState([])
@@ -195,7 +197,7 @@ const TypeButtons = () => {
     const [ types_x025, setTypes_x025] = useState([])
     const [ types_x0,   setTypes_x0  ] = useState([])
 
-    const {currentFirstSelection, currentSecondSelection, setSelection, deleteSelection} = useSelection()
+    const {currentFirstSelection, currentSecondSelection, setSelection, deleteSelection, setBothTypes, deleteBothTypes} = useSelection()
 
     const handleClick = (type) => {
         if(type===currentFirstSelection || type===currentSecondSelection){
@@ -248,15 +250,47 @@ const TypeButtons = () => {
     
     }, [currentFirstSelection, currentSecondSelection])
     
+    const searchPokemon = (selectedPokemon) => {
+        fetch('https://pokeapi.co/api/v2/pokemon/' + selectedPokemon.toLowerCase())
+            .then(res => res.json())
+            .then(data => {
+                deleteBothTypes()
+                
+                if(data.types.length>1){
+
+                    (data.types[0].type.name !== currentFirstSelection || data.types[1].type.name !== currentSecondSelection) && resetTypes()
+
+                    setBothTypes(data.types[0].type.name, data.types[1].type.name)
+                } else{
+                    resetTypes()
+                    setSelection(data.types[0].type.name)
+                }
+                
+            }
+            )
+    }
+
+    const handleEnter = (e) => {
+        if(e.key === "Enter"){
+            searchPokemon(input)
+        }
+    }
 
 
     return (
         <div className="flexContainer">
 
-            <div className="button-container">
-                {pokemonTypes.map((type) => 
-                <button onClick={() => handleClick(type.name)} className={`${type.name} button`} key={type.name}>{type.name}</button>
-                )}
+            <div className="selectorContainer">
+                <div className="button-container">
+                    {pokemonTypes.map((type) => 
+                    <button onClick={() => handleClick(type.name)} className={`${type.name} button`} key={type.name}>{type.name}</button>
+                    )}
+                </div>
+
+                <div className="pokedexContainer">
+                    <button onClick={() => searchPokemon(input)}>Buscar</button>
+                    <input placeholder="Nombre de Pokemon" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => handleEnter(e)}></input>
+                </div>
             </div>
             <div className="selectedContainer">
                 <h2>Seleccionados:</h2>
@@ -269,29 +303,29 @@ const TypeButtons = () => {
                     <h2>Efectivo:</h2>
                     <h2>x4:</h2>
                     <div className="typesContainer">
-                        {types_x4.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x4.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
                     <h2>x2:</h2>
                     <div className="typesContainer">
-                        {types_x2.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x2.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
                 </div>
                 <div className="NeutralContainer">
                     <h2>Neutral:</h2>
                     <h2>x1:</h2>
                     <div className="typesContainer">
-                        {types_x1.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x1.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
                 </div>
                 <div className="UneffectiveContainer">
                     <h2>Poco efectivo:</h2>
                     <h2>x1/2:</h2>
                     <div className="typesContainer">
-                        {types_x05.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x05.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
                     <h2>x1/4:</h2>
                     <div className="typesContainer">
-                        {types_x025.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x025.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
                 </div>
 
@@ -299,7 +333,7 @@ const TypeButtons = () => {
                     <h2>Inmune:</h2>
                     <h2>x0:</h2>
                     <div className="typesContainer">
-                        {types_x0.map((type) => <p className={`${type} types`}>{type}</p>)}
+                        {types_x0.map((type) => <p className={`${type} types`} key={type}>{type}</p>)}
                     </div>
 
                 </div>
